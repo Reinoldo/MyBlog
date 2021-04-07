@@ -1,8 +1,8 @@
-import React from "react"
-import Links from "./content"
-import Icons from "./Icons"
+import React from 'react'
+import Links from './content'
+import Icons from './Icons'
 
-import * as S from "./styled"
+import * as S from './styled'
 
 const SocialLinks = () => (
   <S.SocialLinksWrapper>
@@ -12,7 +12,7 @@ const SocialLinks = () => (
 
         return (
           <S.SocialLinksItem key={i}>
-            <S.SocialLinksLink href={link.url} target="_blank">
+            <S.SocialLinksLink href={link.url} target='_blank'>
               <S.IconWrapper>
                 <Icon />
               </S.IconWrapper>

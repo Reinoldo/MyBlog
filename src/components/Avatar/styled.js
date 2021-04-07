@@ -1,5 +1,5 @@
-import { GatsbyImage } from "gatsby-plugin-image"
-import styled from "styled-components"
+import { GatsbyImage } from 'gatsby-plugin-image'
+import styled from 'styled-components'
 
 export const AvatarWrapper = styled(GatsbyImage)`
   border-radius: 50%;
