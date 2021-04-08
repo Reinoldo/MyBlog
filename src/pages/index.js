@@ -12,8 +12,10 @@ const IndexPage = () => {
         allMarkdownRemark {
           edges {
             node {
-              frontmatter {
+              fields {
                 slug
+              }
+              frontmatter {
                 description
                 title
                 date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
@@ -34,14 +36,8 @@ const IndexPage = () => {
       {items.map(
         ({
           node: {
-            frontmatter: {
-              slug,
-              description,
-              title,
-              date,
-              category,
-              background,
-            },
+            fields: { slug },
+            frontmatter: { description, title, date, category, background },
             timeToRead,
           },
         }) => {

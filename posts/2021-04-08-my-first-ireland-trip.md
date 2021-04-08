@@ -1,13 +1,12 @@
 ---
 date: 2021-04-07 10:10:10
-title: My first euro trip
-description: A brief story about my first euro trip during pandemic.
+title: My first ireland trip
+description: A brief story about my first Ireland trip.
 category: Misc
 background: "#7ff00f"
-slug: "/about/"
 ---
 
-# My first euro trip
+# My first Ireland trip
 
 blablablablablalbalblbla
 

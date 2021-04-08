@@ -1,7 +1,51 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const { createFilePath } = require("gatsby-source-filesystem")
 
-// You can delete this file if you're not using it
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  // you only want to operate on `Mdx` nodes. If you had content from a
+  // remote CMS you could also check to see if the parent node was a
+  // `File` node here
+  if (node.internal.type === "MarkdownRemark") {
+    const value = createFilePath({ node, getNode })
+
+    createNodeField({
+      // Name of the field you are adding
+      name: "slug",
+      // Individual MDX node
+      node,
+      // Generated value based on filepath with "blog" prefix. you
+      // don't need a separating "/" before the value because
+      // createFilePath returns a path with the leading "/".
+      value: `/${value.slice(12)}`,
+    })
+  }
+}
+
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+  const results = await graphql(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  results.data.allMarkdownRemark.edges.forEach(edge => {
+    const post = edge.node.fields
+
+    createPage({
+      path: `${post.slug}`,
+      component: require.resolve("./src/templates/blog-post.js"),
+      context: {
+        slug: post.slug,
+      },
+    })
+  })
+}
