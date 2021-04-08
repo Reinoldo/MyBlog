@@ -1,39 +1,43 @@
-import * as React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import PostItem from "../components/PostItem"
 import SEO from "../components/seo"
 
-const IndexPage = () => {
-  const { allMarkdownRemark } = useStaticQuery(
-    graphql`
-      query PostList {
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                description
-                title
-                date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-                category
-                background
-              }
-              timeToRead
-            }
+export const query = graphql`
+  query PostList($limit: Int!, $skip: Int!) {
+    allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          fields {
+            slug
           }
+          frontmatter {
+            description
+            title
+            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+            category
+            background
+          }
+          timeToRead
         }
       }
-    `
-  )
-  const items = allMarkdownRemark.edges
+    }
+  }
+`
+
+const BlogList = ({ data }) => {
+  const postList = data.allMarkdownRemark.edges
+
   return (
     <Layout>
       <SEO title="Home" />
-      {items.map(
+      {postList.map(
         ({
           node: {
             fields: { slug },
@@ -58,4 +62,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default BlogList
