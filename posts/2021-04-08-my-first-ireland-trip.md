@@ -6,10 +6,16 @@ category: Misc
 background: "#7ff00f"
 ---
 
-# My first Ireland trip
+## Doolin Cave is precious
 
-blablablablablalbalblbla
+I've said
 
-## Loads of thoughts
+## The most freaking experience ever, Cliffs of Moher
 
-uhasdhudsfahujdfsajhoadfsjdsafjfdsajndfs
+Then I went to the gloriuos Cliffs of Moher, a astunishing experience
+
+> of all the things I've lost
+> I miss my mind the most. - Mark twain
+
+- Greatest view of all
+- The Cliffs are really high
