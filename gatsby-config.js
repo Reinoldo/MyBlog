@@ -5,6 +5,7 @@ module.exports = {
       "A blog about frontend development with Gatsby, Graphql, React.",
     author: "Reinoldo Sommer",
     position: "Frontend Developer",
+    siteUrl: `https://sommerblog.netlify.app/`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -54,6 +55,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-gatsby-cloud",
+    "gatsby-plugin-netlify-cms",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
