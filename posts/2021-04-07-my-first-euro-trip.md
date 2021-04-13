@@ -6,10 +6,9 @@ category: Misc
 background: "#7ff00f"
 thumbnail: /static/images/uploads/1.jpg
 ---
-
 # My first euro trip
 
-blablablablablalbalblbla
+So I went to Rome and it was great
 
 ## Loads of thoughts
 
