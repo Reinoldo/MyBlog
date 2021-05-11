@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import styled from "styled-components"
+import { Link } from "gatsby"
+import media from "styled-media-query"
 
 export const MenuBarWrapper = styled.aside`
   align-items: center;
