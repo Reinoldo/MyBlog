@@ -4,10 +4,9 @@ const queries = require("./src/utils/algolia_queries")
 module.exports = {
   siteMetadata: {
     title: "My blog",
-    description:
-      "A blog about frontend development with Gatsby, Graphql, React.",
+    description: "A blog about technology and my experiences around the globe.",
     author: "Reinoldo Sommer",
-    position: "Frontend Developer",
+    position: "Frontend Developer | React",
     siteUrl: `https://sommerblog.netlify.app/`,
   },
   plugins: [
