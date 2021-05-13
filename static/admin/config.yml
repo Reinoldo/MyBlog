@@ -3,6 +3,7 @@ backend:
   repo: reinoldo/myblog
   branch: main
   site_domain: https://sommerblog.netlify.app/
+  open_authoring: true
 
 publish_mode: editorial_workflow
 media_folder: "static/images/uploads"
