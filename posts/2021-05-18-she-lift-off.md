@@ -9,3 +9,5 @@ background: "#C6C6BC"
 ##She finally lift off
 
 Her instagram is @vicjalcon.arte
+
+![Art by vic](/images/uploads/dsc_0915.jpg)
