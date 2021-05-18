@@ -15,16 +15,16 @@ module.exports = {
     "gatsby-plugin-image",
     //it needs to be the first to work with gatsby-remark-images
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "uploads",
-        path: `${__dirname}/static/uploads`,
+        name: `uploads`,
+        path: `${__dirname}/static/images/uploads`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "images",
+        name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
@@ -52,30 +52,21 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // CommonMark mode (default: true)
-        commonmark: true,
-        // Footnotes mode (default: true)
-        footnotes: true,
-        // Pedantic mode (default: true)
-        pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
-        gfm: true,
-        // Plugins configs
         plugins: [
           {
-            resolve: "gatsby-remark-relative-images",
+            resolve: `gatsby-remark-relative-images`,
             options: {
-              staticFolderName: "static",
+              name: `uploads`,
             },
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 960,
               linkImagesToOriginal: false,
             },
           },
-          "gatsby-remark-lazy-load",
+          `gatsby-remark-lazy-load`,
         ],
       },
     },
