@@ -6,4 +6,4 @@ date: 2021-05-11T14:47:49.937Z
 
 **Incredibly difficult to do it**
 
-![Me trying to play golf](/assets/img/1.jpg)
+![Me trying to play golf](/uploads/1.jpg)
