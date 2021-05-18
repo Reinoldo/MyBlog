@@ -1,6 +1,6 @@
 ---
 title: She lift off
-description: My girlfriend now sells her art !
+description: My girlfriend is now selling her lovely art !
 date: 2021-05-18 03:46:24
 thumbnail: /images/uploads/thisone.jpg
 category: misc
