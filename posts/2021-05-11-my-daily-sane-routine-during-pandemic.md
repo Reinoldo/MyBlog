@@ -7,4 +7,4 @@ category: Misc
 
 **Incredibly difficult to do it**
 
-![Me trying to play golf](/images/uploads/dsc_0915.jpg)
+![Me trying to play golf](/images/uploads/1.jpg)
