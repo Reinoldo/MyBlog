@@ -3,7 +3,7 @@ date: 2021-04-08 10:10:10
 title: My first ireland trip
 description: A brief story about my first Ireland trip.
 category: Misc
-background: "#7ff00f"
+background: "#C6C6BC"
 ---
 
 ## Doolin Cave is precious

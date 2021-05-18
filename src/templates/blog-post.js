@@ -10,6 +10,8 @@ export const query = graphql`
       frontmatter {
         title
         date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+        background
+        category
       }
       html
       timeToRead
@@ -27,6 +29,7 @@ const Post = ({ data }) => {
         <S.PostDate>
           {post.frontmatter.date}, {post.timeToRead} min
         </S.PostDate>
+
         <S.PostTitle>{post.frontmatter.title}</S.PostTitle>
         <S.PostDescription>{post.frontmatter.description}</S.PostDescription>
       </S.PostHeader>

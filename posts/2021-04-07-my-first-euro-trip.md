@@ -3,7 +3,7 @@ title: My first Euro trip
 description: A brief story about my first euro trip during pandemic.
 date: 2021-04-07 10:10:10
 category: Misc
-background: "#7ff00f"
+background: "#C6C6BC"
 ---
 
 # My first euro trip

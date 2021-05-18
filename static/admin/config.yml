@@ -36,9 +36,9 @@ collections:
           widget: "select",
           options:
             [
-              { label: "React", value: "#61dafb" },
+              { label: "React", value: "#43C5D4" },
               { label: "Misc", value: "#C6C6BC" },
-              { label: "JS", value: "#FCFC4D" },
+              { label: "JS", value: "#CCD137" },
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }

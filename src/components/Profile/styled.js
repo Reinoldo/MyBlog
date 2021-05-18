@@ -17,7 +17,7 @@ export const ProfileLink = styled(Link)`
     text-align: left;
   `}
   &:hover {
-    color: #1fa1f2;
+    color: #0f96a5;
   }
 `
 

@@ -58,6 +58,7 @@ const BlogList = ({ data, pageContext }) => {
               title={title}
               description={description}
               timeToRead={timeToRead + " min"}
+              background={background}
             />
           )
         }
