@@ -6,7 +6,7 @@ backend:
   open_authoring: true
 
 publish_mode: editorial_workflow
-media_folder: "/images/uploads"
+media_folder: "static/images/uploads"
 public_folder: /images/uploads
 collections:
   - name: "post" # Used in routes, e.g., /admin/collections/blog
@@ -17,5 +17,28 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD hh:mm:ss",
+        }
+      - { label: "Image", name: "thumbnail", widget: "image" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["misc", "react", "js"],
+        }
+      - {
+          label: "Background",
+          name: "background",
+          widget: "select",
+          options:
+            [
+              { label: "React", value: "#61dafb" },
+              { label: "Misc", value: "#C6C6BC" },
+              { label: "JS", value: "#FCFC4D" },
+            ],
+        }
       - { label: "Body", name: "body", widget: "markdown" }
