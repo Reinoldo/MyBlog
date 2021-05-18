@@ -6,8 +6,8 @@ backend:
   open_authoring: true
 
 publish_mode: editorial_workflow
-media_folder: "static/img"
-public_folder: /img
+media_folder: "/images/uploads"
+public_folder: /images/uploads
 collections:
   - name: "post" # Used in routes, e.g., /admin/collections/blog
     label: "Posts" # Used in the UI
