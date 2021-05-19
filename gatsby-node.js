@@ -40,17 +40,35 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
             }
             timeToRead
           }
+          next {
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+          previous {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
         }
       }
     }
   `)
 
-  results.data.allMarkdownRemark.edges.forEach(edge => {
+  results.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
     createPage({
-      path: `${edge.node.fields.slug}`,
+      path: `${node.fields.slug}`,
       component: require.resolve("./src/templates/blog-post.js"),
       context: {
-        slug: edge.node.fields.slug,
+        slug: node.fields.slug,
+        previousPost: next,
+        nextPost: previous,
       },
     })
   })

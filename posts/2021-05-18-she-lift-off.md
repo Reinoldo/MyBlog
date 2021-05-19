@@ -9,6 +9,6 @@ background: "#C6C6BC"
 
 \##She finally lift off
 
-Her instagram [@vicjalcon.arte](https://www.instagram.com/vicjalcon.arte/), go check it out !
+Her instagram <a href="https://www.instagram.com/vicjalcon.arte/" target="_blank">@vicjalcon.arte</a>, go check it out !
 
-![Art by vic](/images/uploads/thisone.jpg "Aquarella art")
+![Art by vic](/images/uploads/thisone.jpg)
