@@ -37,7 +37,7 @@ collections:
           options:
             [
               { label: "React", value: "#43C5D4" },
-              { label: "Misc", value: "#C6C6BC" },
+              { label: "Misc", value: "#3E6155" },
               { label: "JS", value: "#CCD137" },
             ],
         }

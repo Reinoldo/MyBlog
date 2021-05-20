@@ -3,11 +3,15 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import RecommendedPost from "../components/RecommendedPost"
+import Comments from "../components/Comments"
 import * as S from "../components/Post/styled"
 
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
@@ -40,6 +44,7 @@ const Post = ({ data, pageContext }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </S.MainContent>
       <RecommendedPost next={next} previous={previous} />
+      <Comments url={post.fields.slug} title={post.frontmatter.title} />
     </Layout>
   )
 }

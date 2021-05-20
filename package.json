@@ -30,6 +30,7 @@
     "netlify-cms-app": "^2.14.43",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
+    "react-disqus-comments": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-instantsearch-dom": "^6.10.3",

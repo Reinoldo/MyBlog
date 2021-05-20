@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
+import media from "styled-media-query"
 
 export const PostItemLink = styled(Link)`
   color: #8899a6;
@@ -16,6 +17,12 @@ export const PostItemWrapper = styled.section`
   display: flex;
   padding: 2rem 3rem;
   width: 100%;
+  ${media.lessThan("large")`
+    
+    flex-direction: column;
+    align-items: flex-start;
+    
+  `}
 `
 
 export const PostItemTag = styled.div`
@@ -30,6 +37,13 @@ export const PostItemTag = styled.div`
   min-height: 90px;
   min-width: 90px;
   text-transform: uppercase;
+  ${media.lessThan("large")`
+    border-radius: 0%;
+    min-height: 30px;
+    margin-bottom: 1rem;
+    margin-left:1.5rem;
+    font-size: 1rem;
+  `}
 `
 
 export const PostItemInfo = styled.div`
