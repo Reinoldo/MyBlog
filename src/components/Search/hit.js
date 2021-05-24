@@ -9,7 +9,8 @@ const Hit = ({ hit }) => {
       slug={hit.fields.slug}
       date={hit.date}
       category={hit.category}
-      timeToRead={hit.timeToRead}
+      timeToRead={hit.timeToRead + " min"}
+      background={hit.background}
     />
   )
 }

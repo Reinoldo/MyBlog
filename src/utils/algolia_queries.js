@@ -38,7 +38,6 @@ const queries = [
   {
     query: postsQuery,
     transformer: ({ data }) => flatten(data.posts.edges), // optional
-
     settings: {
       attributesToSnippet: ["excerpt:20"],
     },

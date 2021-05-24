@@ -3,13 +3,13 @@ import React from "react"
 import * as S from "./styled"
 
 const Comments = ({ url, title }) => {
-  const completeUrl = `willianjusten.com.br${url}`
+  const completeUrl = `sommerblog.netlify.app${url}`
 
   return (
     <S.CommentsWrapper>
       <S.CommentsTitle>Comments</S.CommentsTitle>
       <ReactDisqusComments
-        shortname="willianjusten"
+        shortname="sommerblog"
         identifier={completeUrl}
         title={title}
         url={completeUrl}
