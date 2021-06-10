@@ -22,7 +22,7 @@ export const MenuLinksItem = styled.li`
 `
 
 export const MenuLinksLink = styled(Link)`
-  color: #8899a6;
+  color: var(--texts);
   text-decoration: none;
   transition: color 0.5s;
 

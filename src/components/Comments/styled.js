@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const CommentsTitle = styled.h2`
-  color: #fff;
+  color: var(--white);
   margin: 2.4rem auto 1rem;
   text-align: center;
   font-weight: 700;
@@ -18,7 +18,7 @@ export const CommentsWrapper = styled.section`
   }
   #disqus_thread {
     a {
-      color: #1fa1f2 !important;
+      color: var(--highlight) !important;
     }
   }
 `

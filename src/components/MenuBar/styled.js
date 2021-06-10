@@ -4,8 +4,8 @@ import media from "styled-media-query"
 
 export const MenuBarWrapper = styled.aside`
   align-items: center;
-  background: #192734;
-  border-left: 1px solid #38444d;
+  background: var(--mediumBackground);
+  border-left: 1px solid var(--borders);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -15,7 +15,7 @@ export const MenuBarWrapper = styled.aside`
   right: 0;
   width: 3.75rem;
   ${media.lessThan("large")`
-  border-top: 1px solid #38444d;
+  border-top: 1px solid var(--borders);
     bottom:0;
     padding:0;
     width: 100%;
@@ -38,12 +38,19 @@ export const MenuBarLink = styled(Link)`
 `
 
 export const MenuBarItem = styled.span`
-  color: #8899a6;
+  color: var(--texts);
   cursor: pointer;
   display: block;
   height: 3.75rem;
   padding: 1.1rem;
 
+  &.light {
+    color: #d4d400;
+
+    &:hover {
+      color: #e2e240;
+    }
+  }
   ${media.lessThan("large")`
     
   height: 3.2rem;
