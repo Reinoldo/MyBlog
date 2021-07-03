@@ -51,7 +51,10 @@ const MenuBar = () => {
         <S.MenuBarItem title="Change visualization">
           <GridSmall />
         </S.MenuBarItem>
-        <S.MenuBarItem title="Go to the top">
+        <S.MenuBarItem
+          title="Go to the top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           <UpArrowAlt />
         </S.MenuBarItem>
       </S.MenuBarGroup>
