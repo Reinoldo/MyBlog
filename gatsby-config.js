@@ -6,7 +6,7 @@ module.exports = {
     title: "My blog",
     description: "A blog about technology and my experiences around the globe.",
     author: "Reinoldo Sommer",
-    position: "Frontend Developer | React",
+    position: "Software developer | React | NodeJS | AWS",
     siteUrl: `https://sommerblog.netlify.app/`,
   },
   plugins: [
