@@ -1,8 +1,22 @@
+/**
+ * Push posts to Algolia. Run manually: `npm run algolia:index` (after `dotenv` / env vars).
+ * Not run on Netlify by default — use `npm run build` there to avoid build failures if Algolia is unreachable.
+ */
 import "dotenv/config"
 import fs from "node:fs/promises"
 import path from "node:path"
 import matter from "gray-matter"
 import { algoliasearch } from "algoliasearch"
+
+if (
+  process.env.SKIP_ALGOLIA_INDEX === "1" ||
+  process.env.SKIP_ALGOLIA_INDEX === "true"
+) {
+  console.warn(
+    "Skipping Algolia index (SKIP_ALGOLIA_INDEX). Use `npm run algolia:index` when you want to index."
+  )
+  process.exit(0)
+}
 
 function postPathFromStem(stem) {
   const withSlashes = `/${stem}/`
@@ -17,6 +31,7 @@ function minutesToRead(text) {
   const words = text.trim().split(/\s+/).filter(Boolean).length
   return Math.max(1, Math.round(words / 200))
 }
+
 
 const appId = process.env.PUBLIC_ALGOLIA_APP_ID || process.env.GATSBY_ALGOLIA_APP_ID
 const adminKey = process.env.ALGOLIA_ADMIN_KEY
