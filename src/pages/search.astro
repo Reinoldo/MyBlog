@@ -1,0 +1,10 @@
+---
+import Base from "../layouts/Base.astro";
+import SearchView from "../components/pages/SearchView.jsx";
+import { siteConfig } from "../site.config";
+import euPhoto from "../assets/eu.jpeg?url";
+---
+
+<Base title="Search" description={siteConfig.description}>
+  <SearchView client:load pathname={Astro.url.pathname} avatarSrc={euPhoto} />
+</Base>

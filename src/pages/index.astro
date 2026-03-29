@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+import HomeList from "../components/pages/HomeList.jsx";
+import {
+  getSortedPosts,
+  POSTS_PER_PAGE,
+  getPostPath,
+  formatPostDate,
+  minutesToRead,
+} from "../lib/posts";
+import { siteConfig } from "../site.config";
+import euPhoto from "../assets/eu.jpeg?url";
+
+const sorted = await getSortedPosts();
+const numPages = Math.max(1, Math.ceil(sorted.length / POSTS_PER_PAGE));
+const slice = sorted.slice(0, POSTS_PER_PAGE);
+const posts = slice.map((entry) => ({
+  slug: getPostPath(entry),
+  category: entry.data.category,
+  date: formatPostDate(entry.data.date),
+  title: entry.data.title,
+  description: entry.data.description,
+  timeToRead: `${minutesToRead(entry.body)} min`,
+  background: entry.data.background,
+}));
+---
+
+<Base title="Home" description={siteConfig.description}>
+  <HomeList
+    client:load
+    posts={posts}
+    currentPage={1}
+    numPages={numPages}
+    pathname={Astro.url.pathname}
+    avatarSrc={euPhoto}
+  />
+</Base>

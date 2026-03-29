@@ -1,0 +1,60 @@
+---
+import Base from "../layouts/Base.astro";
+import BlogPostView from "../components/pages/BlogPostView.jsx";
+import {
+  getSortedPosts,
+  getPostPath,
+  formatPostDate,
+  minutesToRead,
+  neighborsForIndex,
+} from "../lib/posts";
+import { markdownToHtml } from "../lib/markdown";
+import { siteConfig } from "../site.config";
+import euPhoto from "../assets/eu.jpeg?url";
+
+export async function getStaticPaths() {
+  const sorted = await getSortedPosts();
+  return sorted.map((entry) => {
+    const path = getPostPath(entry);
+    const slug = path.replace(/^\//, "").replace(/\/$/, "");
+    return { params: { slug } };
+  });
+}
+
+const { slug } = Astro.params;
+const sorted = await getSortedPosts();
+const index = sorted.findIndex(
+  (e) => getPostPath(e).replace(/^\//, "").replace(/\/$/, "") === slug,
+);
+if (index === -1) {
+  return Astro.redirect("/404/");
+}
+const entry = sorted[index];
+const { older, newer } = neighborsForIndex(sorted, index);
+const html = markdownToHtml(entry.body);
+const path = getPostPath(entry);
+const olderNav = older
+  ? { path: getPostPath(older), title: older.data.title }
+  : null;
+const newerNav = newer
+  ? { path: getPostPath(newer), title: newer.data.title }
+  : null;
+---
+
+<Base title={entry.data.title} description={entry.data.description}>
+  <BlogPostView
+    client:load
+    pathname={Astro.url.pathname}
+    avatarSrc={euPhoto}
+    slug={path}
+    title={entry.data.title}
+    description={entry.data.description}
+    dateStr={formatPostDate(entry.data.date)}
+    minutes={minutesToRead(entry.body)}
+    category={entry.data.category}
+    background={entry.data.background}
+    html={html}
+    older={olderNav}
+    newer={newerNav}
+  />
+</Base>

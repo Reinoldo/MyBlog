@@ -1,0 +1,44 @@
+backend:
+  name: github
+  repo: reinoldo/myblog
+  branch: main
+  site_domain: https://sommerblog.netlify.app/
+  open_authoring: true
+
+publish_mode: editorial_workflow
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "post"
+    label: "Posts"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD hh:mm:ss",
+        }
+      - { label: "Image", name: "thumbnail", widget: "image" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: ["misc", "react", "js"],
+        }
+      - {
+          label: "Background",
+          name: "background",
+          widget: "select",
+          options:
+            [
+              { label: "React", value: "#43C5D4" },
+              { label: "Misc", value: "#3E6155" },
+              { label: "JS", value: "#CCD137" },
+            ],
+        }
+      - { label: "Body", name: "body", widget: "markdown" }

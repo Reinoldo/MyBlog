@@ -54,9 +54,15 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
+# Build / tooling
 .cache/
-public
+dist/
+.astro/
+
+# Editor / local Cursor project (skills, plans)
+.cursor/
+
+# Astro static assets live in public/ (unlike Gatsby output)
 
 # Mac files
 .DS_Store

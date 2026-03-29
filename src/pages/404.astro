@@ -1,0 +1,10 @@
+---
+import Base from "../layouts/Base.astro";
+import NotFoundView from "../components/pages/NotFoundView.jsx";
+import { siteConfig } from "../site.config";
+import euPhoto from "../assets/eu.jpeg?url";
+---
+
+<Base title="404: Not found" description={siteConfig.description}>
+  <NotFoundView client:load pathname={Astro.url.pathname} avatarSrc={euPhoto} />
+</Base>

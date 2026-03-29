@@ -1,0 +1,10 @@
+---
+import Base from "../layouts/Base.astro";
+import AboutView from "../components/pages/AboutView.jsx";
+import { siteConfig } from "../site.config";
+import euPhoto from "../assets/eu.jpeg?url";
+---
+
+<Base title="About me" description={siteConfig.description}>
+  <AboutView client:load pathname={Astro.url.pathname} avatarSrc={euPhoto} />
+</Base>
