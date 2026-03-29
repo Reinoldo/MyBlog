@@ -27,34 +27,34 @@ export default function MenuBar({ pathname = "/" }) {
   const homeActive = pathMatches(pathname, "/");
 
   const itemBase =
-    "relative block h-[3.75rem] w-8 cursor-pointer p-[1.1rem] text-[var(--texts)] hover:text-[var(--highlight)] max-[1170px]:h-10 max-[1170px]:w-10 max-[1170px]:p-[0.9rem]";
+    "relative flex h-[3.75rem] w-full cursor-pointer items-center justify-center text-[var(--texts)] hover:text-[var(--highlight)] max-[1170px]:h-10 max-[1170px]:w-10 max-[1170px]:shrink-0 max-[1170px]:p-[0.9rem]";
 
   return (
     <aside
-      className="fixed right-0 top-0 z-10 flex h-screen w-[3.75rem] flex-col items-center justify-between border-l border-[var(--borders)] bg-[var(--mediumBackground)] py-2 transition-colors duration-500 max-[1170px]:bottom-0 max-[1170px]:top-auto max-[1170px]:h-auto max-[1170px]:w-full max-[1170px]:flex-row max-[1170px]:border-l-0 max-[1170px]:border-t max-[1170px]:p-0"
+      className="fixed right-0 top-0 z-10 flex h-screen w-[3.75rem] flex-col items-stretch justify-between border-l border-[var(--borders)] bg-[var(--mediumBackground)] py-2 transition-colors duration-500 max-[1170px]:bottom-0 max-[1170px]:top-auto max-[1170px]:h-auto max-[1170px]:w-full max-[1170px]:flex-row max-[1170px]:items-center max-[1170px]:border-l-0 max-[1170px]:border-t max-[1170px]:p-0"
       aria-label="Toolbar"
     >
-      <div className="flex flex-col max-[1170px]:flex-row">
+      <div className="flex w-full flex-col max-[1170px]:w-auto max-[1170px]:flex-row">
         <a
           href="/"
           title="Comeback to home"
           className={
             homeActive
-              ? "block [&>span]:text-[var(--highlight)]"
-              : "block"
+              ? "block w-full max-[1170px]:w-auto [&>span]:text-[var(--highlight)]"
+              : "block w-full max-[1170px]:w-auto"
           }
         >
           <span className={itemBase}>
             <Home className={iconClass} />
           </span>
         </a>
-        <a href="/search/" title="Search" className="block">
+        <a href="/search/" title="Search" className="block w-full max-[1170px]:w-auto">
           <span className={itemBase}>
             <Search className={iconClass} />
           </span>
         </a>
       </div>
-      <div className="flex flex-col max-[1170px]:flex-row">
+      <div className="flex w-full flex-col max-[1170px]:w-auto max-[1170px]:flex-row">
         <span
           title="Change theme"
           role="button"
