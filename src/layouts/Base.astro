@@ -1,0 +1,65 @@
+---
+import "../styles/tailwind.css";
+import { siteConfig } from "../site.config";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = siteConfig.description } = Astro.props;
+const pageTitle = `${title} | ${siteConfig.title}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content={siteConfig.author} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" type="image/png" href="/r.png" />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="dark">
+    <script is:inline>
+      (function () {
+        window.__onThemeChange = function () {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.className = newTheme;
+          window.__onThemeChange(newTheme);
+        }
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem("theme");
+        } catch (err) {}
+        window.__setPreferredTheme = function (newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem("theme", newTheme);
+          } catch (err) {}
+        };
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        darkQuery.addEventListener("change", function (e) {
+          window.__setPreferredTheme(e.matches ? "dark" : "light");
+        });
+        setTheme(preferredTheme || (darkQuery.matches ? "dark" : "light"));
+      })();
+    </script>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: system-ui, sans-serif;
+  }
+</style>
